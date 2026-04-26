@@ -5,7 +5,7 @@ interface ChatInputProps {
     onSendMessage: (message: string) => void;
 }
 
-export const ChatInput = ({ onSendMessage }: ChatInputProps) => {
+const ChatInput = ({ onSendMessage }: ChatInputProps) => {
     const [text, setText] = useState<string>("")
 
     const handleSend = () => {
@@ -38,7 +38,7 @@ export const ChatInput = ({ onSendMessage }: ChatInputProps) => {
                                     : "bg-gray-200 text-gray-400 cursor-not-allowed"
                                     }`}
                             >
-                                <Send size={18} className="transform -rotate-45 -translate-y-0.5 translate-x-0.5" />
+                                <Send size={18} />
                             </button>
                         </div>
                     </div>
@@ -54,3 +54,5 @@ export const ChatInput = ({ onSendMessage }: ChatInputProps) => {
         </footer>
     )
 }
+
+export default ChatInput;
