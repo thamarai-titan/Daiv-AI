@@ -12,13 +12,13 @@ export const IconWrapper = ({
     className = ""
 }: IconWrapperProps) => {
 
-    // Container sizes
+
     const containerSizes = {
-        sm: "w-8 h-8 rounded-lg", // Sidebar / Small list size
-        lg: "w-12 h-12 rounded-xl", // Main Bot / Large size
+        sm: "w-8 h-8 rounded-lg",
+        lg: "w-12 h-12 rounded-xl",
     };
 
-    // Icon sizes (the actual SVG inside)
+
     const iconSizes = {
         sm: "w-4 h-4",
         lg: "w-6 h-6",
