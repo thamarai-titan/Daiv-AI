@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { X, Plus, MessageSquare, Pencil, Trash2, Check } from "lucide-react";
+import { X, Plus, MessageSquare, Pencil, Trash2, Check, Ellipsis } from "lucide-react";
 import type { Chat } from "../../App";
 import ConfirmModal from "../Modals/ConfirmModal";
 
@@ -53,7 +53,7 @@ const Sidebar = ({
 
                 <div className="flex items-center justify-between p-4 border-b border-(--border)">
                     <h1 className="text-xl font-bold">
-                        <span className="text-green-500">Daiv</span>
+                        <span className="text-(--accent)">Daiv</span>
                         <span className="text-(--primary-text)">AI</span>
                     </h1>
                     <button onClick={onClose} className="md:hidden p-1 hover:bg-gray-200 rounded-md transition-colors">
@@ -64,22 +64,19 @@ const Sidebar = ({
                 <div className="p-3">
                     <button
                         onClick={onNewChat}
-                        className="w-full flex items-center justify-center gap-2 p-2 bg-green-500 hover:bg-green-600 text-white rounded-lg text-sm font-medium transition-colors"
+                        className="w-full flex items-center justify-center gap-2 p-2 bg-(--accent) hover:bg-green-600 text-white rounded-lg text-sm font-medium transition-colors"
                     >
                         <Plus size={18} /> New Chat
                     </button>
                 </div>
 
-                <div className="flex-1 overflow-y-auto px-3">
-                    <p className="text-[10px] text-(--secondary-text) px-2 py-2 font-bold uppercase tracking-widest">
-                        History
-                    </p>
+                <div className="flex-1 overflow-y-auto px-3 border-t border-(--border) pt-4">
 
                     {chats.map((chat) => (
                         <div
                             key={chat.id}
-                            className={`relative flex items-center gap-2 px-3 py-2.5 rounded-xl cursor-pointer mb-1 transition-colors group ${activeChatId === chat.id
-                                ? "bg-green-500/10 text-green-600"
+                            className={`relative bg-(#E5E7EB) flex items-center gap-2 px-3 py-2.5 rounded-xl cursor-pointer mb-1 transition-colors group ${activeChatId === chat.id
+                                ? "bg-green-500/10 text-(--accent0"
                                 : "hover:bg-gray-200"
                                 }`}
                             onMouseEnter={() => setHoveredId(chat.id)}
@@ -99,11 +96,11 @@ const Sidebar = ({
                                         if (e.key === "Escape") setEditingId(null);
                                     }}
                                     onBlur={() => commitEdit(chat.id)}
-                                    className="flex-1 text-sm bg-transparent border-b border-green-500 outline-none text-(--primary-text)"
+                                    className="flex-1 text-sm bg-(#E5E7EB) border-b border-(--accent) outline-none text-(--primary-text) font-light"
                                     onClick={(e) => e.stopPropagation()}
                                 />
                             ) : (
-                                <span className="text-sm truncate font-medium flex-1">
+                                <span className="text-sm truncate font-light flex-1 bg-(#e5e7eB)">
                                     {chat.title}
                                 </span>
                             )}
@@ -119,7 +116,7 @@ const Sidebar = ({
                                             onClick={() => commitEdit(chat.id)}
                                             className="p-1 hover:bg-green-100 rounded-md transition-colors"
                                         >
-                                            <Check size={13} className="text-green-600" />
+                                            <Check size={13} className="text-(--accent)" />
                                         </button>
                                     ) : (
                                         <button
@@ -133,7 +130,7 @@ const Sidebar = ({
                                         onClick={() => setDeleteTarget(chat.id)}
                                         className="p-1 hover:bg-red-100 rounded-md transition-colors"
                                     >
-                                        <Trash2 size={13} className="text-red-400" />
+                                        <Trash2 size={13} className="text-(--destructive)" />
                                     </button>
                                 </div>
                             )}
@@ -142,13 +139,18 @@ const Sidebar = ({
                 </div>
 
 
-                <div className="p-3 border-t border-(--border) flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white text-xs font-bold shrink-0">
-                        U
+                <div className="p-3 border-t border-(--border) flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-full bg-(--accent) flex items-center justify-center text-white text-xs font-bold shrink-0">
+                            U
+                        </div>
+                        <div className="flex flex-col min-w-0">
+                            <span className="text-sm font-medium text-(--primary-text) truncate">User</span>
+                            <span className="text-xs text-(--secondary-text) truncate">user@email.com</span>
+                        </div>
                     </div>
-                    <div className="flex flex-col min-w-0">
-                        <span className="text-sm font-medium text-(--primary-text) truncate">User</span>
-                        <span className="text-xs text-(--secondary-text) truncate">user@email.com</span>
+                    <div>
+                        <Ellipsis size={20} className="text-(--secondary-text)" />
                     </div>
                 </div>
             </aside>
