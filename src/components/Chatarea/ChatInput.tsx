@@ -24,7 +24,7 @@ const ChatInput = ({ onSendMessage }: ChatInputProps) => {
                         <button className="text-(--secondary-text) hover:text-(--accent) transition-colors">
                             <Paperclip size={20} />
                         </button>
-                        <textarea name="" id="" rows={1} value={text} onChange={(e) => setText(e.target.value)} placeholder="Message Neural Nexus..." className="flex-1 bg-transparent border-none outline-none text-sm resize-none py-1 max-h-32 overflow-y-auto text-(--primary-text)"></textarea>
+                        <textarea name="" id="" rows={1} value={text} onChange={(e) => setText(e.target.value)} placeholder="Ask Anything to DaivAI" className="flex-1 bg-transparent border-none outline-none text-sm resize-none py-1 max-h-32 overflow-y-auto text-(--primary-text)"></textarea>
                         <div className="flex items-center gap-1 mg:gap-2">
                             <button className="p-2 text-(--secondary-text) hover:text-(--accent)hidden sm:block">
                                 <Mic />

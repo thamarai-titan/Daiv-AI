@@ -56,7 +56,7 @@ const ChatMessages = ({ messages, onDeleteMessage }: ChatMessagesProps) => {
                                 <div className="flex flex-col gap-1 flex-1 min-w-0">
                                     <div className="flex items-center gap-2 mb-1">
                                         <span className="text-xs font-bold text-(--primary-text) uppercase tracking-wider">
-                                            {msg.role === "assistant" ? "Neural Nexus" : "You"}
+                                            {msg.role === "assistant" ? "DaivAI Response" : "You"}
                                         </span>
                                         <span className="text-[10px] text-(--secondary-text) font-medium opacity-60">
                                             {msg.time}
