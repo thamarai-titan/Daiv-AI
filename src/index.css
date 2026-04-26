@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Sora", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --bg: #ffffff;
+  --secondary-bg: #f9f9f9;
+  --primary-text: #1a1a1a;
+  --secondary-text: #6b6b6b;
+  --border: #e5e7eb;
+  --card-bg: #f1f3f5;
+  --accent: #00a832;
+  --destructive: #fb2c36;
+}
+:root {
+  font-family: var(--font-sans);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevents the "double scrollbar" bug */
+}
