@@ -1,4 +1,4 @@
-import { useState } from "react"; // 1. Import useState
+import { useState } from "react";
 import { Zap, Brain, Sparkles, Cpu } from "lucide-react";
 import { IconWrapper } from "../../ui/IconWrapper";
 
@@ -14,7 +14,7 @@ const EngineSelectorComp = () => {
     const [activeId, setActiveId] = useState('nexus');
 
     return (
-        <div className="w-[288px] bg-(--bg) rounded-md border border-(--border) p-4 flex flex-col gap-2">
+        <div className="w-[288px] bg-(--bg) rounded-md border border-(--border) p-4 flex flex-col gap-2 text-sm">
             <p className="text-(--secondary-text) text-sm font-light">Select AI Engine</p>
             <div className="flex flex-col gap-1">
                 {initialEngines.map((engine) => {
